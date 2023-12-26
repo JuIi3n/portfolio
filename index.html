@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julian Kappeßer - Junior Web Engineer</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <img id="mountain" src="./assets/headerimg/mountain.svg" alt="mountain">
+    <img id="ski" src="./assets/headerimg/ski.png" alt="ski">
+
+    <img class="cloud" src="./assets/headerimg/cloud.png" alt="cloud">
+    <img class="cloud" src="./assets/headerimg/cloud.png" alt="cloud">
+
+    <h1>Hi, I am<br><span>Julian</span></h1>
+    <h2>Junior Web Engineer</h2>
+  </header>
+
+  <main>
+    <div class="container" id="aboutme_section">
+      <div id="characteristics">
+        <img src="./assets/aboutme/avatar.png" alt="avatar">
+        <ul>
+          <li>Julian</li>
+          <li>17 years old</li>
+          <li>Junior Web Engineer</li>
+        </ul>
+      </div>
+      <section class="article">
+        <h2>About me</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique debitis fugiat esse iure odit? Ea dolorum possimus excepturi distinctio inventore aliquam earum maiores velit suscipit assumenda quasi doloremque culpa dolores commodi minus quos, architecto, magnam quia placeat cum rerum repellendus iusto. Sapiente, consequuntur ullam ab aspernatur asperiores adipisci? Sequi, ut, reiciendis tenetur fuga illum mollitia sed ex omnis eius eligendi accusantium recusandae veritatis illo harum id delectus architecto obcaecati rem dolorem optio, sit blanditiis aspernatur! Saepe exercitationem a, excepturi pariatur cumque odio, consectetur est minima inventore voluptas voluptatibus dolorem deleniti tenetur fugit, nobis nulla? Similique voluptate qui ipsam officia! Optio, veritatis. Earum quo aliquam, non aspernatur nobis distinctio maiores adipisci corporis voluptas blanditiis esse enim cum laboriosam explicabo? Quos, pariatur doloremque ipsa ipsum soluta earum tempora laudantium eligendi? Fuga odit quo in minima nisi ex illo voluptatibus, nobis neque fugiat nihil? Deserunt vitae quae amet fugit excepturi nobis ullam quis, consequuntur consequatur magnam ex porro fuga sequi totam nemo laudantium velit nihil quibusdam nisi provident? Officia in animi porro quidem, quo dolor sequi temporibus soluta, assumenda voluptatem velit commodi, mollitia facere tempora? Nisi esse nihil impedit quo minus nesciunt culpa officia nobis facere voluptatibus quaerat ducimus consectetur aliquid maiores rem velit debitis doloremque veniam a, animi nam quae! Quo dolorem voluptates odio rem! Omnis esse alias laboriosam corrupti, voluptate in quia aspernatur tenetur obcaecati suscipit voluptatum saepe illo dignissimos atque hic doloribus, nihil cumque molestias voluptas officia! Labore ut laborum expedita sint laboriosam nihil omnis non, dolore eius, earum debitis necessitatibus, aut doloribus ipsam incidunt. Odit exercitationem voluptatem asperiores veniam earum minus aliquid nemo minima cumque consequuntur temporibus totam illum vero, maiores architecto fuga, optio beatae, maxime neque? Sequi illum voluptates illo unde quidem nam modi, iusto, praesentium animi veniam eos non neque debitis nemo exercitationem incidunt, totam tempora vero!</p>
+      </section>
+    </div>
+
+    <div id="skills_section" class="container flex-column center-horizontal-column">
+      <h2>My Skills and Projects</h2>
+      <div id="skills" class="container flex-row center-horizontal-row">
+        <ul class="container flex-row">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JS</li>
+          <li>JAVA</li>
+        </ul>
+      </div>
+
+      <div class="container" id="projects">
+        <div class="project-card">
+          EXAMPLE 1
+        </div>
+        <div class="project-card">
+          EXAMPLE 2
+        </div>
+        <div class="project-card">
+          EXAMPLE 3
+        </div>
+        <div class="project-card">
+          EXAMPLE 4
+        </div>
+        <div class="project-card">
+          EXAMPLE 5
+        </div>
+        <div class="project-card">
+          EXAMPLE 6
+        </div>
+      </div>
+    </div>
+
+    <div id="contactme" class="container flex-column center-horizontal-column">
+      <h2>Get in touch</h2>
+
+      <p>To get in touch with me, write me an email.<br>I`m very excited for your writing!</p>
+      <a href="mailto:julian.kappesser@outlook.de">Send a mail</a>
+    </div>
+
+    <div id="menu" class="container flex-column center-horizontal-column">
+      <i class="fa-solid fa-bars"></i>
+      <ul>
+        <li><a href="#aboutme_section"><i title="About Me" class="fa-regular fa-user"></i></a></li>
+        <li><a href="#skills_section"><i title="Skills" class="fa-solid fa-chart-simple"></i></a></li>
+        <li><a href="#projects"><i title="Projects" class="fa-solid fa-grip"></i></a></li>
+        <li><a href="#contactme"><i title="Contact" class="fa-regular fa-address-book"></i></a></li>
+        <li><i title="Toggle colorsheme" id="theme_switcher" class="fa-solid fa-lightbulb"></i></li>
+        <li><i title="Exit Menu" id="exit_menu" class="fa-regular fa-circle-xmark"></i></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="flex-row center-horizontal-row">
+    <p>© Julian 2023</p>
+  </footer>
+
+  <noscript>You have to enable JAVASCRIPT in your browsersettings to use this site successfully</noscript>
+  <script src="https://kit.fontawesome.com/ba5512e16d.js" crossorigin="anonymous"></script>
+  <script defer>
+    let menu_button = document.getElementById('menu')
+    let theme_switcher = document.getElementById('theme_switcher')
+
+    if(localStorage.getItem('color-scheme') == null) {
+      localStorage.setItem('color-scheme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+      if(localStorage.getItem('color-scheme') == "dark") {
+        theme_switcher.classList.remove("fa-solid")
+        theme_switcher.classList.add("fa-regular")
+      }
+    }else{
+      if(localStorage.getItem('color-scheme') == "dark") {
+        theme_switcher.classList.remove("fa-solid")
+        theme_switcher.classList.add("fa-regular")
+        document.body.classList.add("dark")
+      }else{
+        document.body.classList.add("light")
+      }
+    }
+
+    menu_button.children[0].addEventListener('click', e => {
+      menu_button.style.setProperty("left", "-5rem")
+      setTimeout(() => {
+        menu_button.classList.toggle('menu-active')
+        menu_button.style.setProperty("left", "")
+      }, 500)
+    })
+
+    theme_switcher.addEventListener('click', e => {
+      document.body.classList.remove(localStorage.getItem("color-scheme"))
+      if(localStorage.getItem("color-scheme") == "light") {
+        localStorage.setItem("color-scheme", "dark")
+        theme_switcher.classList.remove("fa-solid")
+        theme_switcher.classList.add("fa-regular")
+      }else{
+        localStorage.setItem("color-scheme", "light")
+        theme_switcher.classList.add("fa-solid")
+        theme_switcher.classList.remove("fa-regular")
+      }
+      document.body.classList.add(localStorage.getItem("color-scheme"))
+    })
+
+    document.getElementById('exit_menu').addEventListener('click', e => {
+      menu_button.style.setProperty("left", "-5rem")
+      setTimeout(() => {
+        menu_button.classList.toggle('menu-active')
+        menu_button.style.setProperty("left", "")
+      }, 500)
+    })
+
+    window.addEventListener('scroll', e => {
+      if(window.scrollY > 500) {
+        menu_button.classList.add('menu-visible')
+      }else{
+        menu_button.classList.remove('menu-visible')
+      }
+    })
+  </script>
+</body>
+</html>
